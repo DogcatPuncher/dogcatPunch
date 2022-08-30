@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+  "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+	<definition name="content" template="/WEB-INF/views/template/client/contentLayout.jsp">
+		<put-attribute name="title" value="petcation"/>
+		<put-attribute name="header" value="/WEB-INF/views/template/client/header.jsp"/>
+		<put-attribute name="body" value=""/>
+		<put-attribute name="footer" value="/WEB-INF/views/template/client/footer.jsp"/>
+	</definition>
+	
+	<!-- <definition name="community/communityBoardList" extends="content">
+		<put-attribute name="title" value="기본 게시판"/>
+		<put-attribute name="body" value="/WEB-INF/views/community/communityBoardList.jsp"/>
+	</definition>
+	
+	<definition name="board/writeForm" extends="content">
+		<put-attribute name="title" value="기본 게시판"/>
+		<put-attribute name="body" value="/WEB-INF/views/board/writeForm.jsp"/>
+	</definition>
+	
+	<definition name="board/boardDetail" extends="content">
+		<put-attribute name="title" value="기본 게시판"/>
+		<put-attribute name="body" value="/WEB-INF/views/board/boardDetail.jsp"/>
+	</definition>-->
+	
+	<definition name="community/*" extends="content">
+		<!--<put-attribute name="title" value="기본 게시판"/>  -->
+		<put-attribute name="body" value="/WEB-INF/views/community/{1}.jsp"/>
+	</definition>
+	<definition name="diary/*" extends="content">
+		<!--<put-attribute name="title" value="기본 게시판"/>  -->
+		<put-attribute name="body" value="/WEB-INF/views/diary/{1}.jsp"/>
+	</definition>
+	<definition name="member/*" extends="content">
+		<put-attribute name="body" value="/WEB-INF/views/member/{1}.jsp" />
+	</definition>
+	<definition name="reserv/*" extends="content">
+		<put-attribute name="body" value="/WEB-INF/views/reserv/{1}.jsp"/>
+	</definition>
+	<definition name="hotel/*" extends="content">
+		<put-attribute name="body" value="/WEB-INF/views/hotel/{1}.jsp"/>
+	</definition>
+	<definition name="mypage/*" extends="content">
+      <!--<put-attribute name="title" value="기본 게시판"/>  -->
+      	<put-attribute name="body" value="/WEB-INF/views/mypage/{1}.jsp"/>
+    </definition>
+    <definition name="notice/*" extends="content">
+      <put-attribute name="body" value="/WEB-INF/views/notice/{1}.jsp"/>
+   </definition>
+   	<definition name="qna/*" extends="content">
+		<put-attribute name="title" value="기본 게시판" />
+		<put-attribute name="body" value="/WEB-INF/views/qna/{1}.jsp" />
+	</definition>
+    <!--tiles-setting에 추가할 내용-->
+   <definition name="intro" template="/WEB-INF/views/template/client/mainLayout.jsp">
+      <put-attribute name="title" value="PETCATION" />
+      <put-attribute name="header" value="/WEB-INF/views/template/client/header.jsp" />
+   </definition>
+   <definition name="outro" template="/WEB-INF/views/template/client/mainLayout2.jsp">
+      <put-attribute name="body" value="" />
+      <put-attribute name="footer" value="/WEB-INF/views/template/client/footer.jsp" />
+   </definition>
+</tiles-definitions>

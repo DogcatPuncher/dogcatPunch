@@ -72,10 +72,6 @@
             let hotel_no = ${hotelVO.hotel_no};
             let reservDate = "";
             let res_day = [];
-            let blockDay = [];
-            
-            let checkin_Date = [];
-            let checkout_Date = []; 
             
             console.log("호텔번호 " + hotel_no);
             
@@ -96,13 +92,6 @@
                       console.log(checkin + "/" + checkout);
                       
                       res_day.push([checkin,checkout]);
-                      
-                      
-                      checkin_Date.push([checkin]);
-                      checkout_Date.push([checkout]);
-                      
-                      
-                      
                    });
                    console.log(res_day);
                    for(var key in res_day){
@@ -118,20 +107,8 @@
                 })
              }
             
-			/*function blockDay(checkin_Date,checkout_Date){
-				
-				 for (var i in checkin_Date){
-					for (var j in checkout_Date){
-					
-						console.log("checkin + checkout : " + checkin_Date[i] + checkout_Date[j]);	
-						res_day.push(checkin_Date[i],checkout_Date[j]);
-						console.log(res_day);
-						return "[" + moment(checkin_Date[i]).format('YYYY-MM-DD') + "," + moment(checkout_Date[j]).format('YYYY-MM-DD') + "]";
-					}
-				} 
-			}*/
 			
-			function pickerData(res_day, dd) {
+			function pickerData(res_day) {
             var picker = new Lightpick({
                 field: document.getElementById('date'),
                 inline : true,
@@ -140,57 +117,6 @@
                 minDate: moment().startOf('day'),
                 minDays : 2,
                 disableDates : [moment().startOf('month'), res_day],
-               /*  function(){
-                	for(var key in res_day){
-                  		console.log('값 : ' + res_day[key]);
-                		
-                		console.log("moment : "  + moment().format(res_day[key],'YYYY-MM-DD'));
-                	}
-                	
-				}, */
-	
-	
-	
-	
-	//[moment().startOf('month'),  ['2022-09-10','2022-09-12'] ] ,
-	
-					
-	/*for(var i = 0; i < res_day.length; i++){
-					blockDay = res_day[i].checkin + "," + res_day[i].checkout;
-					console.log("blockDay" + blockDay);} 
-	 for(var key in res_day){
-	  console.log('값 : ' + res_day[key])
-},  */
-	//[moment().startOf('month'), ['2022-08-23', '2022-08-24']],
-	//for (blockDay in blockDay),
-	/* for (let i =0; i<checkin_Date.length; i++){
-		return "[" + moment(checkin_Date[i].format('YYYY-MM-DD')) + "," + moment(checkout_Date[i].format('YYYY-MM-DD')) + "]";
-	}
-	, */
-	//blockDay(checkin_Date,checkout_Date),
-	//[moment().startOf('month'), [blockDay]],
-	//[moment().startOf('month'), blockDay],
-	//
-	
-	/* function(blockDay){
-		for (var i in blockDay) {
-	    	  document.write(i + ", ");
-	    	}
-		[moment().startOf('month'),
-	
-	}
-], */
-	//
-	/* let aaaa = [];
-		for(int i=0; i<blockDay.length(); i++){
-			document.write(blockDay[i]);
-		}[moment().startOf('month'), ], */
-	
-	
-	
-	//[moment().startOf('month'), ['2022-08-23', '2022-08-24']],
-	
-	
                 format: 'YYYY-MM-DD',
                 onSelect: function(start, end){
                    

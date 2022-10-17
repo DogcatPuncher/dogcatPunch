@@ -12,8 +12,3 @@
 - Spring 
 - Tomcat
 - SQL
-
-## Advanced Feature
-자랑하고 싶은 기능
-
-## 개선사항
